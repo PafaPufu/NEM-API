@@ -1,0 +1,31 @@
+{
+  "name": "nem-api",
+  "version": "1.0.0",
+  "description": "dev api for simple mimicrab crud app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PafaPufu/NEM-API.git"
+  },
+  "keywords": [
+    "Express",
+    "NodeJs",
+    "RESTful",
+    "API"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PafaPufu/NEM-API/issues"
+  },
+  "homepage": "https://github.com/PafaPufu/NEM-API#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.2"
+  }
+}
