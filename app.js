@@ -3,9 +3,11 @@ const app = express();
 const mongoose = require('mongoose');
 const routeTest = require('./routes/test');
 const routeOrder = require('./routes/orders');
+const cors = require("cors");
 require('dotenv/config');
 
 // Middleware
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

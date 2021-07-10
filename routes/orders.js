@@ -99,6 +99,38 @@ router.post("/", async (req, res) => {
 });
 
 
+//UPDATE as for now only for Item Name, quantity, and delivery charge. --DATE SHOULD BE INCLUDED LATER
+router.patch("/:orderId", async (req, res) => {
+    try{
+        const id = req.params.orderId;
+        const updatedOrder = await Order.updateOne(
+            { _id: id },
+            {
+                $set: 
+                { 
+                    item: req.body.item,
+                    quantity: req.body.quantity,
+                    delivery_charge: req.body.delivery_charge
+                }
+            }
+        );
+        res.status(200).json(updatedOrder);
+    } catch (err) {
+        res.status(500).json({ message: err });
+    }
+});
+
+//DELETE function
+router.delete("/:orderId", async (req, res) =>{
+    try{
+        const id = req.params.orderId;
+        const removeOrder = await Order.deleteOne({ _id: id });
+        res.status(200).json(removeOrder);
+    } catch (err) {
+        res.status(500).json({ message: err });
+    }
+});
+
 
 
 module.exports = router;
